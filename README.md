@@ -29,7 +29,7 @@ To run the project, Docker and Docker Compose are required. Follow the steps bel
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/MGrount/PlayerApp.git
+   git clone https://github.com/MGrount/demo.git
    cd demo
    
 2. Run via the terminal or the IDE
