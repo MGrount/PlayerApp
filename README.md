@@ -23,7 +23,6 @@ To run the project, Docker and Docker Compose are required. Follow the steps bel
 - [Postman](https://www.postman.com/)
 - [Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 - [Maven](https://maven.apache.org/download.cgi)
-- [Spring Data JPA](https://docs.spring.io/spring-boot/docs/3.2.3/reference/htmlsingle/index.html#data.sql.jpa-and-spring-data)
 
 ### Installation
 
@@ -50,8 +49,8 @@ To run the project, Docker and Docker Compose are required. Follow the steps bel
 During the development of this project, the following assumptions were made:
 
 * Some of the fields presented in the CSV that are empty presumed to be nullable.
-* The CSV file supposed to be in a size that wont crash the runners memory.
-* If for some reason the parser receives a broken or non valid CSV file the application will throw an exception that will be handled.
+* The CSV file supposed to be in a size that wֿon't crash the machine memory.
+* If for some reason the parser receives a broken or non-valid CSV file or incorrect row the application will throw an exception that will be handled.
 * The SaveAll method is used to store the CSV player entity into the DB without batching(note points of improvement).
 * The playerID is unique and cannot be null.
 
@@ -60,7 +59,7 @@ During the development of this project, the following assumptions were made:
 
 * Database: PostgreSQL is used for data storage.
 * On boot event were used to kickstart the parsing cycle(ApplicationListener).
-* Containerization: Docker is utilized to create a container for the Apache server and import player.csv.
+* Containerization: Docker is utilized to create a container for the server and the import of player.csv file.
 * Parsing the player.csv file into the PostgreSQL on docker init via costume parsing service so additional info could be added down the road.
 * Two Rest api GET endpoints are available, getAllPlayers and getPlayerById.
 * Postman collection and environment are also available in the folder.
@@ -73,10 +72,11 @@ During the development of this project, the following assumptions were made:
 
 Areas for improvement include:
 
-* Exploring more efficient SQL solutions, such as sharding and improved indexes, to optimize querying performance.
+* Exploring more efficient SQL solutions, such as sharding and improved indexes if needed in the future, inorder to optimize querying performance.
 * The use of batching and pagination in order to fetch and store large sums of data.
-* Loading changed state without restarting the application
-* Parsing the file once by checking if it was changed
+* Loading changed state without restarting the application.
+* Parsing the file once by checking if it was changed.
+* Validation layer if requirements change in the future.
 * Metrics for measuring KPIs
 
 This project is licensed under the [MIT] - see the LICENSE.md file for details.
@@ -89,4 +89,5 @@ PostgreSQL for database management.
 Docker for containerization.
 Java and Spring.
 Maven.
-Include any additional acknowledgments or references as needed.
+
+Include any additional acknowledgments or references as needed :)
