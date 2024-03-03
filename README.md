@@ -53,6 +53,7 @@ During the development of this project, the following assumptions were made:
 * If for some reason the parser receives a broken or non-valid CSV file or incorrect row the application will throw an exception that will be handled.
 * The SaveAll method is used to store the CSV player entity into the DB without batching(note points of improvement).
 * The playerID is unique and cannot be null.
+* Use of two response objects(PlayerResponse and PlayersResponse) for endpoint response and mapping flexibility. 
 
 
 ### Key Features
@@ -77,6 +78,7 @@ Areas for improvement include:
 * Loading changed state without restarting the application.
 * Parsing the file once by checking if it was changed.
 * Validation layer if requirements change in the future.
+* Include integration tests.
 * Metrics for measuring KPIs
 
 This project is licensed under the [MIT] - see the LICENSE.md file for details.
